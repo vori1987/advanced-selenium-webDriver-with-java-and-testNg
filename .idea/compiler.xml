@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="selenium-for-beginners" />
+        <module name="advanced selenium webDriver with java and testNg" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,4 +1,4 @@
-package com.herokuapp.theinternet;
+package com.herokuapp.theinternet.loginpagetest;
 
 import java.time.Duration;
 import org.openqa.selenium.By;

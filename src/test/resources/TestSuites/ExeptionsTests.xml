@@ -6,7 +6,7 @@
         <parameter name="browser" value="chrome"/>
 
         <classes>
-            <class name="com.herokuapp.theinternet.ExceptionsTests">
+            <class name="com.herokuapp.theinternet.loginpagetest.ExceptionsTests">
                 <methods>
                     <include name="disabledElementTest"/>
                 </methods>

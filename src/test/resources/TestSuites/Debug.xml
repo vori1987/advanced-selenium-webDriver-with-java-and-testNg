@@ -8,7 +8,7 @@
         <parameter name="password" value="SuperSecretPassword!"/>
         <parameter name="expectedMessage" value="Your username is invalid!"/>
         <classes>
-            <class name="com.herokuapp.theinternet.LoginTests">
+            <class name="com.herokuapp.theinternet.loginpagetest.LoginTests">
                 <methods>
                     <include name="positiveLoginTest"/>
                 </methods>

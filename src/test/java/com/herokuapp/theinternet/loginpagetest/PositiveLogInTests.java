@@ -1,6 +1,6 @@
 package com.herokuapp.theinternet.loginpagetest;
 
-import com.herokuapp.theinternet.base.BaseTest;
+import com.herokuapp.theinternet.base.TestUtilities;
 import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class PositiveLogInTests extends BaseTest {
+public class PositiveLogInTests extends TestUtilities {
 
     @Parameters({"username", "password", "expectedMessage"})
     @Test(priority = 1, groups = {"positiveTests", "smokeTests"})
@@ -28,6 +28,8 @@ public class PositiveLogInTests extends BaseTest {
         password.sendKeys("SuperSecretPassword!");
         //explicit wait (wait when element will be clickable) - many times using.
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        sleep(3000);
+
         //                        click login button
         WebElement logInButton = driver.findElement(By.tagName("button"));
         wait.until(ExpectedConditions.elementToBeClickable(logInButton));

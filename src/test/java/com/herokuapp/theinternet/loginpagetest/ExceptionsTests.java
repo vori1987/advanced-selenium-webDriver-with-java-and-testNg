@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class ExceptionsTests extends TestUtilities {
 
-    @Test(priority = 1)
+    @Test()
     public void notVisibleTest() {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
         System.out.println("Page is opened.");
@@ -25,7 +25,7 @@ public class ExceptionsTests extends TestUtilities {
         Assert.assertTrue(expectedLabel.contains("Hello World!"), "Finish text: " + expectedLabel);
     }
 
-    @Test(priority = 2)
+    @Test()
     public void timeOutTest() {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
         System.out.println("Page is opened.");
@@ -43,7 +43,7 @@ public class ExceptionsTests extends TestUtilities {
         Assert.assertTrue(expectedLabel.contains("Hello World!"), "Finish text: " + expectedLabel);
     }
 
-    @Test(priority = 3)
+    @Test()
     public void noSuchElementTest() {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
         System.out.println("Page is opened.");
@@ -55,7 +55,7 @@ public class ExceptionsTests extends TestUtilities {
                 "Couldn't verify expecting text");
     }
 
-    @Test(priority = 3)
+    @Test()
     public void stateElementTest() {
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
         WebElement checkBox = driver.findElement(By.id("checkbox"));
@@ -70,7 +70,7 @@ public class ExceptionsTests extends TestUtilities {
                 "Checkbox is not visible but it should be");
     }
 
-    @Test(priority = 4)
+    @Test()
     public void disabledElementTest() {
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
         WebElement textField = driver.findElement(By.xpath("(//input)[2]"));

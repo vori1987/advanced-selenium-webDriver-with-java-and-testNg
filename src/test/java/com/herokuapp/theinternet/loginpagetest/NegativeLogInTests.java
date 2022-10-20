@@ -12,10 +12,10 @@ public class NegativeLogInTests extends TestUtilities {
     @Parameters({"username", "password", "expectedMessage"})
     @Test(priority = 2, groups = {"negativeTests", "smokeTests"})
     public void negativeLoginTest(String username, String password, String expectedMessage) {
-        System.out.println("Starting negativeLoginTest with" + username + " and " + password);
+       log.info("Starting negativeLoginTest with" + username + " and " + password);
         String url = "https://the-internet.herokuapp.com/login";
         driver.get(url);
-        System.out.println("Page is opened.");
+       log.info("Page is opened.");
         WebElement usernameElement = driver.findElement(By.id("username"));
         usernameElement.sendKeys(username);
         WebElement passwordElement = driver.findElement(By.id("password"));

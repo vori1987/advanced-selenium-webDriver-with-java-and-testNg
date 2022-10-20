@@ -15,7 +15,7 @@ public class ExceptionsTests extends TestUtilities {
     @Test()
     public void notVisibleTest() {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
-        System.out.println("Page is opened.");
+       log.info("Page is opened.");
         WebElement startButton = driver.findElement(By.xpath("//div[@id='start']/button[.='Start']"));
         startButton.click();
         WebElement finishElement = driver.findElement(By.xpath("//div[@id='finish']/h4[.='Hello World!']"));
@@ -28,7 +28,7 @@ public class ExceptionsTests extends TestUtilities {
     @Test()
     public void timeOutTest() {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
-        System.out.println("Page is opened.");
+       log.info("Page is opened.");
         WebElement startButton = driver.findElement(By.xpath("//div[@id='start']/button[.='Start']"));
         startButton.click();
         WebElement finishElement = driver.findElement(By.xpath("//div[@id='finish']/h4[.='Hello World!']"));
@@ -36,7 +36,7 @@ public class ExceptionsTests extends TestUtilities {
         try {
             wait.until(ExpectedConditions.visibilityOf(finishElement));
         } catch (TimeoutException exception) {
-            System.out.println("Exception catched " + exception.getMessage());
+           log.info("Exception catched " + exception.getMessage());
             sleep(3000);
         }
         String expectedLabel = finishElement.getText();
@@ -46,7 +46,7 @@ public class ExceptionsTests extends TestUtilities {
     @Test()
     public void noSuchElementTest() {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
-        System.out.println("Page is opened.");
+       log.info("Page is opened.");
         WebElement startButton = driver.findElement(By.xpath("//div[@id='start']/button[.='Start']"));
         startButton.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

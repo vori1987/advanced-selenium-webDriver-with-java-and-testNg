@@ -15,11 +15,11 @@ public class PositiveLogInTests extends TestUtilities {
     @Parameters({"username", "password", "expectedMessage"})
     @Test(priority = 1, groups = {"positiveTests", "smokeTests"})
     public void positiveLoginTest() throws InterruptedException {
-        System.out.println("Starting login test");
+       log.info("Starting login test");
         //        open test page
         String url = "https://the-internet.herokuapp.com/login";
         driver.get(url);
-        System.out.println("Page is opened.");
+       log.info("Page is opened.");
         //                enter user name
         WebElement username = driver.findElement(By.id("username"));
         username.sendKeys("tomsmith");

@@ -1,6 +1,9 @@
 package com.herokuapp.theinternet.loginpagetest;
 
 import com.herokuapp.theinternet.base.TestUtilities;
+import com.herokuapp.theinternet.pages.LoginPage;
+import com.herokuapp.theinternet.pages.SecureAreaPage;
+import com.herokuapp.theinternet.pages.WelcomePageObject;
 import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,44 +17,27 @@ public class PositiveLogInTests extends TestUtilities {
 
     @Parameters({"username", "password", "expectedMessage"})
     @Test(priority = 1, groups = {"positiveTests", "smokeTests"})
-    public void positiveLoginTest() throws InterruptedException {
-       log.info("Starting login test");
-        //        open test page
-        String url = "https://the-internet.herokuapp.com/login";
-        driver.get(url);
-       log.info("Page is opened.");
-        //                enter user name
-        WebElement username = driver.findElement(By.id("username"));
-        username.sendKeys("tomsmith");
-        //                enter pas
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("SuperSecretPassword!");
-        //explicit wait (wait when element will be clickable) - many times using.
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        sleep(3000);
+    public void loginTest(){
+        log.info("Starting login test");
+        WelcomePageObject welcomePage = new WelcomePageObject(driver, log);
+        welcomePage.openPage();
+        LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
+        SecureAreaPage secureAreaPage = loginPage.logIn("tomsmith", "SuperSecretPassword!");
 
-        //                        click login button
-        WebElement logInButton = driver.findElement(By.tagName("button"));
-        wait.until(ExpectedConditions.elementToBeClickable(logInButton));
-        logInButton.click();
-        //logOut button
-        WebElement logOutButton = driver.findElement(By.xpath("//a[@class = 'button secondary radius']"));
-        Assert.assertTrue(logOutButton.isDisplayed(), "Log Out button is not visible");
-        //                verifications:
-        //        new url
-        Thread.sleep(3000);
-        String expectedUrl = "https://the-internet.herokuapp.com/secure";
+        Assert.assertEquals(secureAreaPage.getCurrentUrl(), secureAreaPage.getPageUrl());
+        Assert.assertTrue(secureAreaPage.isLogOutButtonVisible(), "LogOut button is not visible");
+
+        String expectedUrl = "http://the-internet.herokuapp.com/secure";
         String actualString = driver.getCurrentUrl();
         Assert.assertEquals(actualString, expectedUrl, "Actual page url is not the same as expected");
-        //                logout button is visible
-        //                successful login message
+
         WebElement succesLogInMessage = driver.findElement(By.cssSelector("div#flash"));
         String expectedMessage = "You logged into a secure area!";
-        String actualMessage = succesLogInMessage.getText();
-        //        Assert.assertEquals(actualMessage, expectedMessage, "Actual message is not the same as expected");
+        String actualMessage = secureAreaPage.getSuccessMessageText();
+
         Assert.assertTrue(actualMessage.contains(expectedMessage),
-                "Actual message does not contain expected message.\nActualMessage: "
-                        + actualMessage + "\nExpectedMessage: " + expectedMessage);
+                "ActualSuccessMessage does not contain expectedSuccessMessage.\nActualSuccessMessage: "
+                        + actualMessage + "\nExpectedSuccessMessage: " + expectedMessage);
     }
 }
 

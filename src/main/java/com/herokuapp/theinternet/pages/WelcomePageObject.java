@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 
 public class WelcomePageObject extends BasePageObject {
 
-    private String pageUrl = "http://the-internet.herokuapp.com/";
-
-    private By formAuthenticationLinkLocator = By.linkText("Form Authentication");
+    private final String pageUrl = "http://the-internet.herokuapp.com/";
+    private final By checkboxesLinkLocator = By.linkText("Checkboxes");
+    private final By formAuthenticationLinkLocator = By.linkText("Form Authentication");
 
     public WelcomePageObject(WebDriver driver, Logger log) {
         super(driver, log);
@@ -24,5 +24,11 @@ public class WelcomePageObject extends BasePageObject {
         log.info("Clicking Form Authentication link on Welcome Page");
         click(formAuthenticationLinkLocator);
         return new LoginPage(driver, log);
+    }
+
+    public CheckboxesPage clickCheckboxesLink() {
+        log.info("Clicking checkboxes link on Welcome Page");
+        click(checkboxesLinkLocator);
+        return new CheckboxesPage(driver, log);
     }
 }

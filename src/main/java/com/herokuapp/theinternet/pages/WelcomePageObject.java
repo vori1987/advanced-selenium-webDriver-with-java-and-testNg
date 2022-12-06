@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 public class WelcomePageObject extends BasePageObject {
 
     private final String pageUrl = "http://the-internet.herokuapp.com/";
+
     private final By checkboxesLinkLocator = By.linkText("Checkboxes");
+    private final By dropdownLinkLocator = By.linkText("Dropdown");
     private final By formAuthenticationLinkLocator = By.linkText("Form Authentication");
 
     public WelcomePageObject(WebDriver driver, Logger log) {
@@ -30,5 +32,10 @@ public class WelcomePageObject extends BasePageObject {
         log.info("Clicking checkboxes link on Welcome Page");
         click(checkboxesLinkLocator);
         return new CheckboxesPage(driver, log);
+    }
+    public DropdownPage clickDropdownLink(){
+        log.info("Clicking Dropdown link on Welcome Page");
+        click(dropdownLinkLocator);
+        return new DropdownPage(driver, log);
     }
 }

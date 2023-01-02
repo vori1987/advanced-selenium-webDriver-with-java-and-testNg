@@ -2,7 +2,7 @@
 
 <suite name="WindowsTestSuite" verbose="1" >
 
-    <test name="DropdownTests">
+    <test name="WindowsTests">
         <classes>
             <class name="com.herokuapp.theinternet.windowstests.WindowsTests"/>
         </classes>

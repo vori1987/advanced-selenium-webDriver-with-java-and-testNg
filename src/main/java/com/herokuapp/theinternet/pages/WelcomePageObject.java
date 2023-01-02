@@ -13,6 +13,7 @@ public class WelcomePageObject extends BasePageObject {
     private final By formAuthenticationLinkLocator = By.linkText("Form Authentication");
     private final By jsAlertsLocator = By.linkText("JavaScript Alerts");
     private By multipleWindowsLinkLocator = By.linkText("Multiple Windows");
+    private By editorLinkLocator = By.linkText("WYSIWYG Editor");
 
 
     public WelcomePageObject(WebDriver driver, Logger log) {
@@ -48,9 +49,16 @@ public class WelcomePageObject extends BasePageObject {
         click(jsAlertsLocator);
         return new JsAlertsPage(driver, log);
     }
+
     public WindowsPage clickMultipleWindowsLink() {
         log.info("Clicking Multiple Windows link on Welcome Page");
         click(multipleWindowsLinkLocator);
         return new WindowsPage(driver, log);
+    }
+
+    public EditorPage clickWYSIWYGEditorLink() {
+        log.info("Clicking WYSIWYG Editor link on Welcome Page");
+        click(editorLinkLocator);
+        return new EditorPage(driver, log);
     }
 }

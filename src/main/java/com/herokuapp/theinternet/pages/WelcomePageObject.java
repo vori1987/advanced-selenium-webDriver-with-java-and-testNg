@@ -12,6 +12,8 @@ public class WelcomePageObject extends BasePageObject {
     private final By dropdownLinkLocator = By.linkText("Dropdown");
     private final By formAuthenticationLinkLocator = By.linkText("Form Authentication");
     private final By jsAlertsLocator = By.linkText("JavaScript Alerts");
+    private By multipleWindowsLinkLocator = By.linkText("Multiple Windows");
+
 
     public WelcomePageObject(WebDriver driver, Logger log) {
         super(driver, log);
@@ -45,5 +47,10 @@ public class WelcomePageObject extends BasePageObject {
         log.info("Clicking JsAlerts link on Welcome Page");
         click(jsAlertsLocator);
         return new JsAlertsPage(driver, log);
+    }
+    public WindowsPage clickMultipleWindowsLink() {
+        log.info("Clicking Multiple Windows link on Welcome Page");
+        click(multipleWindowsLinkLocator);
+        return new WindowsPage(driver, log);
     }
 }

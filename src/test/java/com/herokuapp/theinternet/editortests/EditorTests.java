@@ -10,8 +10,8 @@ import org.testng.annotations.Test;
 public class EditorTests extends TestUtilities {
 
     @Test
-    public void defaultEditorValueText() {
-        log.info("Starting defaultEditorValueText");
+    public void defaultEditorValueTest() {
+        log.info("Starting defaultEditorValueTest");
         //open main page
         WelcomePageObject welcomePage = new WelcomePageObject(driver, log);
         welcomePage.openPage();

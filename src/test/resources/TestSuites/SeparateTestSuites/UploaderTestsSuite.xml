@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="UploaderTestsSuite" verbose="1" >
+
+    <test name="UploaderTestsSuite">
+        <classes>
+            <class name="com.herokuapp.theinternet.uploadpage.UploadTests"/>
+        </classes>
+    </test>
+
+</suite>

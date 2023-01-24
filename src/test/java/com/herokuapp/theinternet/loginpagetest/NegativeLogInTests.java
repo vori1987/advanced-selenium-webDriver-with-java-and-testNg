@@ -2,7 +2,7 @@ package com.herokuapp.theinternet.loginpagetest;
 
 import com.herokuapp.theinternet.base.TestUtilities;
 import com.herokuapp.theinternet.pages.LoginPage;
-import com.herokuapp.theinternet.pages.WelcomePageObject;
+import com.herokuapp.theinternet.pages.WelcomePage;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -14,7 +14,7 @@ public class NegativeLogInTests extends TestUtilities {
     public void negativeLoginTest(String username, String password, String expectedErrorMessage) {
         log.info("Starting negativeLoginTest with" + username + " and " + password);
         //open main page
-        WelcomePageObject welcomePage = new WelcomePageObject(driver, log);
+        WelcomePage welcomePage = new WelcomePage(driver, log);
         welcomePage.openPage();
         //click on form authentication link
         LoginPage loginPage = welcomePage.clickFormAuthenticationLink();

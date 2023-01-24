@@ -2,9 +2,10 @@ package com.herokuapp.theinternet.pages;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-public class WelcomePageObject extends BasePageObject {
+public class WelcomePage extends BasePageObject {
 
     private final String pageUrl = "http://the-internet.herokuapp.com/";
 
@@ -15,8 +16,7 @@ public class WelcomePageObject extends BasePageObject {
     private By multipleWindowsLinkLocator = By.linkText("Multiple Windows");
     private By editorLinkLocator = By.linkText("WYSIWYG Editor");
 
-
-    public WelcomePageObject(WebDriver driver, Logger log) {
+    public WelcomePage(WebDriver driver, Logger log) {
         super(driver, log);
     }
 
@@ -60,5 +60,11 @@ public class WelcomePageObject extends BasePageObject {
         log.info("Clicking WYSIWYG Editor link on Welcome Page");
         click(editorLinkLocator);
         return new EditorPage(driver, log);
+    }
+
+    public void scrollToButtom() {
+        log.info("Scrolling to the bottom of the page");
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 }

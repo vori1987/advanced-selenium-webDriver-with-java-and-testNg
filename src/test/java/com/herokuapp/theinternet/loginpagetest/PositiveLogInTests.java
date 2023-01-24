@@ -3,12 +3,9 @@ package com.herokuapp.theinternet.loginpagetest;
 import com.herokuapp.theinternet.base.TestUtilities;
 import com.herokuapp.theinternet.pages.LoginPage;
 import com.herokuapp.theinternet.pages.SecureAreaPage;
-import com.herokuapp.theinternet.pages.WelcomePageObject;
-import java.time.Duration;
+import com.herokuapp.theinternet.pages.WelcomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -19,7 +16,7 @@ public class PositiveLogInTests extends TestUtilities {
     @Test(priority = 1, groups = {"positiveTests", "smokeTests"})
     public void loginTest(){
         log.info("Starting login test");
-        WelcomePageObject welcomePage = new WelcomePageObject(driver, log);
+        WelcomePage welcomePage = new WelcomePage(driver, log);
         welcomePage.openPage();
         LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
         SecureAreaPage secureAreaPage = loginPage.logIn("tomsmith", "SuperSecretPassword!");

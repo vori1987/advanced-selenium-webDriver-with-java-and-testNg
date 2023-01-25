@@ -141,4 +141,10 @@ public class BasePageObject {
                         + "simulateHTML5DragAndDrop(source,destination);",
                 find(from), find(to));
     }
+
+    //perform mouse hover over element
+    protected void hoverOverElement(WebElement element) {
+        Actions action = new Actions(driver);
+        action.moveToElement(element).build().perform();
+    }
 }

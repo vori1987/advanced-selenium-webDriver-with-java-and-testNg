@@ -13,8 +13,8 @@ public class WelcomePage extends BasePageObject {
     private final By dropdownLinkLocator = By.linkText("Dropdown");
     private final By formAuthenticationLinkLocator = By.linkText("Form Authentication");
     private final By jsAlertsLocator = By.linkText("JavaScript Alerts");
-    private By multipleWindowsLinkLocator = By.linkText("Multiple Windows");
-    private By editorLinkLocator = By.linkText("WYSIWYG Editor");
+    private final By multipleWindowsLinkLocator = By.linkText("Multiple Windows");
+    private final By editorLinkLocator = By.linkText("WYSIWYG Editor");
 
     public WelcomePage(WebDriver driver, Logger log) {
         super(driver, log);

@@ -18,9 +18,15 @@ public class PositiveLogInTests extends TestUtilities {
         log.info("Starting login test");
         WelcomePage welcomePage = new WelcomePage(driver, log);
         welcomePage.openPage();
-        LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
-        SecureAreaPage secureAreaPage = loginPage.logIn("tomsmith", "SuperSecretPassword!");
+        takeScreenshot("WelcomePage opened");
 
+        LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
+        takeScreenshot("LoginPage opened");
+
+        SecureAreaPage secureAreaPage = loginPage.logIn("tomsmith", "SuperSecretPassword!");
+        takeScreenshot("SecureAreaPage opened");
+
+//verification
         Assert.assertEquals(secureAreaPage.getCurrentUrl(), secureAreaPage.getPageUrl());
         Assert.assertTrue(secureAreaPage.isLogOutButtonVisible(), "LogOut button is not visible");
 

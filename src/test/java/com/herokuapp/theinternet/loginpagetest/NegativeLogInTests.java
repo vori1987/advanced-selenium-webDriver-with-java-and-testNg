@@ -26,6 +26,7 @@ public class NegativeLogInTests extends TestUtilities {
         welcomePage.openPage();
         //click on form authentication link
         LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
+        takeScreenshot("LoginPage opened");
         //execute negative login
         loginPage.negativeLogin(username, password);
         //wait for error msg

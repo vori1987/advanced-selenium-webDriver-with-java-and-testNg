@@ -14,7 +14,7 @@ public class UploadTests extends TestUtilities {
         FileUploaderPage fileUploaderPage = new FileUploaderPage(driver, log);
         fileUploaderPage.openPage();
         // Select file
-     //   String fileName = "test.jpg";
+        //   String fileName = "test.jpg";
         fileUploaderPage.selectFile(fileName);
         // Push upload button
         fileUploaderPage.pushUploadButton();

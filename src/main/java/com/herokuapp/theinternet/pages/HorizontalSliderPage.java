@@ -1,11 +1,9 @@
 package com.herokuapp.theinternet.pages;
 
-import java.util.List;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class HorizontalSliderPage extends BasePageObject {
 
@@ -29,12 +27,12 @@ public class HorizontalSliderPage extends BasePageObject {
         int steps = (int) (Double.parseDouble(value) / 0.5);
         //perform steps
         pressKey(sliderLocator, Keys.ENTER);
-        for (int i=0; i <steps; i++){
+        for (int i = 0; i < steps; i++) {
             pressKey(sliderLocator, Keys.ARROW_RIGHT);
         }
     }
 
-    public String getSliderValue(){
+    public String getSliderValue() {
         String value = find(rangeLocator).getText();
         log.info("Slider value is: " + value);
         return value;

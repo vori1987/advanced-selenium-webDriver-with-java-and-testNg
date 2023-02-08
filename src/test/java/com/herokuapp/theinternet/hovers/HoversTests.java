@@ -9,7 +9,6 @@ public class HoversTests extends TestUtilities {
 
     @Test
     public void user2ProfileTest() {
-        log.info("Starting user1ProfileTest");
         //open Hovers page
         HoversPage hoversPage = new HoversPage(driver, log);
         hoversPage.openPage();

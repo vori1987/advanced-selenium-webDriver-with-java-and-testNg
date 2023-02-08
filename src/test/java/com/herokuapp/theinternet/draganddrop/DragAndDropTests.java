@@ -9,7 +9,6 @@ public class DragAndDropTests extends TestUtilities {
 
     @Test
     public void dragAndDropTest() {
-        log.info("Starting DragAndDropTests");
         //open DragAndDrop page
         DragAndDropPage dragAndDropPage = new DragAndDropPage(driver, log);
         dragAndDropPage.openPage();

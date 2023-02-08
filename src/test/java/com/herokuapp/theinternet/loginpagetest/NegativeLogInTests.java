@@ -4,7 +4,6 @@ import com.herokuapp.theinternet.base.CsvDataProviders;
 import com.herokuapp.theinternet.base.TestUtilities;
 import com.herokuapp.theinternet.pages.LoginPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
-import java.util.HashMap;
 import java.util.Map;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -19,7 +18,6 @@ public class NegativeLogInTests extends TestUtilities {
         String password = testData.get("password");
         String expectedErrorMessage = testData.get("expectedMessage");
         String description = testData.get("description");
-
         log.info("Starting negativeLoginTest #" + no + " for " + description);
         //open main page
         WelcomePage welcomePage = new WelcomePage(driver, log);

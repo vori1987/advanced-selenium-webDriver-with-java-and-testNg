@@ -1,14 +1,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="KeyPressesTestSuite" verbose="1" >
+<suite name="KeyPressesTestSuite" verbose="1">
 
     <test name="KeyPressesTests-CH">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="com.herokuapp.theinternet.keypress.KeyPressesTest">
-            <methods>
-                <include name="KeyPressesTest"></include>
-            </methods>
+                <methods>
+                    <include name="KeyPressesTest"></include>
+                </methods>
             </class>
         </classes>
     </test>

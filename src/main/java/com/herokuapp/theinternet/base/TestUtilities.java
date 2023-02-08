@@ -54,7 +54,7 @@ public class TestUtilities extends BaseTest {
         return (new SimpleDateFormat("HHmmssSS").format(new Date()));
     }
 
-    protected List<LogEntry> getBrowserLogs(){
+    protected List<LogEntry> getBrowserLogs() {
         LogEntries log = driver.manage().logs().get("browser");
         List<LogEntry> logList = log.getAll();
         return logList;

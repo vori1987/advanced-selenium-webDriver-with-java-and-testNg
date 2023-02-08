@@ -7,7 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class DropdownPage extends BasePageObject {
-        private final By dropdown = By.cssSelector("select#dropdown");
+
+    private final By dropdown = By.cssSelector("select#dropdown");
 
     public DropdownPage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -19,7 +20,8 @@ public class DropdownPage extends BasePageObject {
         Select dropdown = new Select(dropdownElement);
         dropdown.selectByValue("" + i);
     }
-    public String getSelectedOption(){
+
+    public String getSelectedOption() {
         WebElement dropdownElement = find(dropdown);
         Select dropdown = new Select(dropdownElement);
         String selectedOption = dropdown.getFirstSelectedOption().getText();

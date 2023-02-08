@@ -16,6 +16,7 @@ import java.util.Map;
 import org.testng.annotations.DataProvider;
 
 public class CsvDataProviders {
+
     @DataProvider(name = "csvReader")
     public static Iterator<Object[]> csvReader(Method method) throws CsvValidationException {
         List<Object[]> list = new ArrayList<Object[]>();
@@ -33,7 +34,7 @@ public class CsvDataProviders {
                     for (int i = 0; i < keys.length; i++) {
                         testData.put(keys[i], dataParts[i]);
                     }
-                    list.add(new Object[] { testData });
+                    list.add(new Object[]{testData});
                 }
             }
             reader.close();
@@ -42,8 +43,6 @@ public class CsvDataProviders {
         } catch (IOException e) {
             throw new RuntimeException("Could not read " + pathname + " file.\n" + Arrays.toString(e.getStackTrace()));
         }
-
         return list.iterator();
     }
-
 }

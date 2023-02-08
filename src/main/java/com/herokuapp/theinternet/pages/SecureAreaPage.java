@@ -18,11 +18,11 @@ public class SecureAreaPage extends BasePageObject {
         return pageUrl;
     }
 
-    public boolean isLogOutButtonVisible(){
+    public boolean isLogOutButtonVisible() {
         return find(logOutButton).isDisplayed();
     }
-    public String getSuccessMessageText(){
+
+    public String getSuccessMessageText() {
         return find(message).getText();
     }
-
 }

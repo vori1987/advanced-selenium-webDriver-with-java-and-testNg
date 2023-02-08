@@ -9,7 +9,6 @@ public class HorizontalSliderTest extends TestUtilities {
 
     @Test
     public void sliderTest() {
-        log.info("Starting sliderTest");
         //open Horizontal Slider page
         HorizontalSliderPage horizontalSliderPage = new HorizontalSliderPage(driver, log);
         horizontalSliderPage.openPage();

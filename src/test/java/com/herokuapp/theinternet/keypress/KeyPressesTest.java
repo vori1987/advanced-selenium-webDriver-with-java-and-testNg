@@ -10,7 +10,6 @@ public class KeyPressesTest extends TestUtilities {
 
     @Test
     public void pressKeyTest() {
-        log.info("Starting pressKeyTest");
         // open KeyPressesPage
         KeyPressesPage keyPressesPage = new KeyPressesPage(driver, log);
         keyPressesPage.openPage();

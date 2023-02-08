@@ -2,9 +2,6 @@
 
 <suite name="NegativeLoginTestSuite" verbose="1" parallel="tests" thread-count="2">
 
-    <listeners>
-        <listener class-name="com.herokuapp.theinternet.base.TestListener"></listener>
-    </listeners>
 
     <test name="NegativeLogInTest-CH">
         <parameter name="browser" value="chrome"/>

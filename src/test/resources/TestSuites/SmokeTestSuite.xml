@@ -2,10 +2,6 @@
 
 <suite name="SmokeTetsSuite" verbose="1">
 
-    <listeners>
-        <listener class-name="com.herokuapp.theinternet.base.TestListener"></listener>
-    </listeners>
-
     <test name="PositiveLoginTests">
         <classes>
             <class name="com.herokuapp.theinternet.loginpagetest.PositiveLogInTests"/>

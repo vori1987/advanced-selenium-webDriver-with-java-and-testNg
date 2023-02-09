@@ -34,9 +34,8 @@ public class BaseTest {
             driver = factory.createChromeDriverWithMobileEmulation(deviceName);
         } else {
             driver = factory.createDriver();
+            driver.manage().window().maximize();
         }
-        driver = factory.createDriver();
-        driver.manage().window().maximize();
         this.testSuiteName = ctx.getSuite().getName();
         this.testName = testName;
         this.testMethodName = method.getName();
